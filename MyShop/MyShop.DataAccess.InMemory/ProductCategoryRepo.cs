@@ -33,7 +33,7 @@ namespace MyShop.DataAccess.InMemory
         }
         public void Update(ProductCategory productCategory)
         {
-            ProductCategory productCategoryToUpdate = productCategories.Find(p => p.ProductCategoryId == productCategory.ProductCategoryId);
+            ProductCategory productCategoryToUpdate = productCategories.Find(p => p.Id == productCategory.Id);
 
             if (productCategoryToUpdate != null)
             {
@@ -47,7 +47,7 @@ namespace MyShop.DataAccess.InMemory
 
         public ProductCategory Find(String Id)
         {
-            ProductCategory productCategory = productCategories.Find(p => p.ProductCategoryId== Id);
+            ProductCategory productCategory = productCategories.Find(p => p.Id== Id);
 
             if (productCategory != null)
             {
@@ -67,7 +67,7 @@ namespace MyShop.DataAccess.InMemory
 
         public void Delete(string Id)
         {
-            ProductCategory productCategoryToDelete = productCategories.Find(p => p.ProductCategoryId == Id);
+            ProductCategory productCategoryToDelete = productCategories.Find(p => p.Id == Id);
 
             if (productCategoryToDelete != null)
             {
