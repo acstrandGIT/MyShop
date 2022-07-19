@@ -1,4 +1,5 @@
-﻿using MyShop.Core.Models;
+﻿using MyShop.Core.Contracts;
+using MyShop.Core.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace MyShop.DataAccess.InMemory
 {
-    public class InMemoryRepo<Generic> where Generic : BaseEntity
+    public class InMemoryRepo<Generic> : IRepo<Generic> where Generic : BaseEntity
     {
         private ObjectCache cache = MemoryCache.Default;
         private List<Generic> items;
@@ -28,7 +29,7 @@ namespace MyShop.DataAccess.InMemory
         {
             cache[className] = items;
         }
-
+        
         public void Insert(Generic g)
         {
             items.Add(g);
