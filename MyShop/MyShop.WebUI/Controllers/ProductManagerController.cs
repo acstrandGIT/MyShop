@@ -12,6 +12,7 @@ using MyShop.Core.ViewModels;
 
 namespace MyShop.WebUI.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class ProductManagerController : Controller
     {
 
