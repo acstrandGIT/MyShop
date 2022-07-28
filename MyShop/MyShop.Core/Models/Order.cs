@@ -22,5 +22,8 @@ namespace MyShop.Core.Models
         public string ZipCode { get; set; }
         public string OrderStatus { get; set; }
         public virtual ICollection<OrderItem> OrderItems { get; set; }
+
+        
+
     }
 }
